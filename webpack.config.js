@@ -35,6 +35,13 @@ module.exports = {
 						}
 					}
 				},
+				{
+					// required to prevent errors from Svelte on Webpack 5+, omit on Webpack 4
+					test:    /node_modules\/svelte\/.*\.mjs$/,
+					resolve: {
+						fullySpecified: false
+					}
+				},
 				fileLoaderRule
 			]
 		},
@@ -68,6 +75,13 @@ module.exports = {
 							hydratable: true,
 							dev
 						}
+					}
+				},
+				{
+					// required to prevent errors from Svelte on Webpack 5+, omit on Webpack 4
+					test:    /node_modules\/svelte\/.*\.mjs$/,
+					resolve: {
+						fullySpecified: false
 					}
 				},
 				fileLoaderRule
